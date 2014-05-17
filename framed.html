@@ -10,8 +10,10 @@ permalink: framed/
 			// prevents links from apps from oppening in mobile safari
 			// this javascript must be the first script in your <head>
 			if ((standalone in navigator) && navigator[standalone]) {
+				alert('standalone true');
 				var curnode, location=document.location, stop=/^(a|html)$/i;
 				document.addEventListener('click', function(e) {
+					alert('event fired');
 					curnode=e.target;
 					while (!(stop).test(curnode.nodeName)) {
 						curnode=curnode.parentNode;
